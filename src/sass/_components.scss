@@ -1,0 +1,643 @@
+//  STANDARD TEXT
+body {
+  @include create-font-sizes($font-base-size-mobile, $font-base-unit);
+
+  @media all and (min-width: $min-width-breakpoint-sm) {
+    @include create-font-sizes($font-base-size, $font-base-unit);
+  }
+}
+
+* {
+  font-family: $font-stack;
+  color: $font-color;
+  line-height: $line-height;
+}
+
+//  STANDARD TEXT - H1-H6
+  h1, h2, h3, h4, h5, h6 {
+    @include reset-header;
+    margin-top: 1em;
+    line-height: $line-height-headers;
+}
+
+//  STANDARD TEXT - SUBTITLE
+.subtitle {
+  font-style: italic;
+}
+
+//  STANDARD TEXT - PARAGRAPH
+p {
+  margin: #{$paragraph-margin};
+}
+
+//  STANDARD TEXT - LINK
+a {
+  text-decoration: underline;
+
+  &:hover {
+    opacity: $link-opacity;
+  }
+}
+
+//  STANDARD TEXT - IMAGE
+figure.basic-img {
+  text-align: center;
+  margin: 2em 0;
+
+  img {
+    @include set-theme-colors(background-color, img-placeholder);
+    height: 40vw;
+
+    @media all and (min-width: $min-width-breakpoint-xl) {
+      height: 600px;
+    }
+  }
+}
+
+//  STANDARD TEXT - FIGURE and CAPTION
+figure {
+  margin: 0;
+
+  figcaption {
+    font-style: italic;
+  }
+}
+
+//  STANDARD TEXT - THEMATIC BREAK
+hr {
+  border: none;
+  border-top: 1px $border-color solid;
+  margin: 3em 0;
+}
+
+//  STANDARD TEXT - BUTTON
+//buttons wrapper is used only when there are more than 1 button
+.buttons-wrapper {
+  margin: #{$paragraph-margin};
+  @include spacers-between-button-like-items(".button", space-between);
+}
+
+.button {
+  @include reset-a;
+  margin: #{$paragraph-margin};
+  display: inline-block;
+  @include padding-and-border-for-buttons;
+
+  &:hover {
+    @include set-theme-colors(background-color, hover-btn-bg);
+    @include set-theme-colors(border-color, hover-btn-bg);
+  }
+
+  svg {
+    margin-left: 10px;
+  }
+}
+
+.buttons-wrapper .button {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+//  AVATAR IMG
+.avatar {
+  margin: 1em;
+  text-align: center;
+
+  @media all and (min-width: $min-width-breakpoint-sm) {
+    float: right;
+    text-align: left;
+  }
+
+  picture img {
+    border-radius: 50%;
+    @include set-theme-colors(background-color, img-placeholder);
+
+    @media all and (min-width: $min-width-breakpoint-sm) {
+      float: right;
+    }
+  }
+}
+
+//  HERO HEADERS
+header.main-header {
+  div[class^="hero"] {
+    height: 100%;
+  }
+
+  .hero-main-category, .hero-subcategory {
+    @include set-theme-colors(background-color, img-placeholder);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    @media all and (orientation: portrait) {
+      background-attachment: unset;
+    }
+  }
+
+  .hero-inner-wrapper {
+    @include max-body-size;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding-top: 10vh;
+
+    @media all and (orientation: portrait) {
+      padding-top: 5vh;
+    }
+  }
+
+  //  HERO HEADERS - MAIN CATEGORY
+  .hero-main-category {
+    h1 {
+      font-size: 23vw;
+      margin-top: 0;
+
+      @media all and (min-width: $min-width-breakpoint-lg) {
+        font-size: 280px;
+      }
+    }
+  }
+
+  //  HERO HEADERS - SUB CATEGORY
+  .hero-subcategory {
+    @include set-subtitle-with-header(h1);
+    @include set-theme-colors(box-shadow, overlay,#{$hex-opacity} 0 0 0 100vw inset);
+
+    h1 {
+      font-size: 12vw;
+      margin-top: 0;
+
+      @media all and (min-width: $min-width-breakpoint-lg) {
+        font-size: 100px;
+      }
+    }
+
+    .subtitle {
+      font-size: 5.7vw;
+
+      @media all and (min-width: $min-width-breakpoint-xs) {
+        font-size: 4vw;
+      }
+
+      @media all and (min-width: $min-width-breakpoint-md) {
+        font-size: 3vw;
+      }
+
+      @media all and (min-width: $min-width-breakpoint-lg) {
+        font-size: 32px;
+      }
+    }
+  }
+}
+
+//  BREADCRUMB
+.breadcrumb {
+  ol {
+    @include reset-ul;
+    border-bottom: 1px solid;
+    @include border-opacity($contrast-color, 0.1);
+    font-style: italic;
+    display: flex;
+    width: fit-content;
+    padding-right: 3em;
+
+    li::after {
+      content: "-";
+      margin: 0 0.5em;
+    }
+
+    li:last-child::after {
+      content: none;
+    }
+
+    a {
+      text-decoration: none;
+
+      &.active:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+//  CATEGORY CARD LIST
+.card-categories-list {
+  @include reset-ul;
+  @include set-grid-for-cards;
+
+  .category-card {
+    display: flex;
+
+    @media all and (min-width: $min-width-breakpoint-lg) {
+      position: relative;
+      padding-top: 100%;
+    }
+
+    a {
+      width: 100%;
+      @include reset-a;
+      @include set-theme-colors(background-color, card-bg);
+      display: inline-block;
+      border-radius: $border-radius-md;
+      padding: 0 10% 10% 10%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @media all and (min-width: $min-width-breakpoint-lg) {
+        position: absolute;
+        top: 0;
+        right:0;
+        left: 0;
+        bottom: 0;
+        padding: 10%;
+      }
+
+      &:hover {
+        @include set-theme-colors(box-shadow, overlay,#{$hex-opacity} 0 0 0 100vw inset);
+      }
+
+      // change look when card has no link
+      &[href=""] {
+        @include set-theme-colors(box-shadow, overlay,#{$hex-opacity} 0 0 0 100vw inset);
+        cursor: not-allowed;
+
+        h2, .subtitle {
+          color: #{$contrast-color}#{$hex-opacity};
+        }
+      }
+
+      @include set-subtitle-with-header(h2);
+
+      .subtitle {
+        @media all and (min-width: $min-width-breakpoint-lg) {
+          @include ellipsis-for-multiline-text(3);
+        }
+      }
+    }
+  }
+}
+
+//  PHOTO GALLERY
+.photo-gallery {
+  margin: #{$paragraph-margin};
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 0.7vw;
+  grid-auto-rows: 29.8vw;
+
+  @media all and (min-width: $min-width-breakpoint-lg) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 17.2vw;
+  }
+
+  @media all and (min-width: $min-width-breakpoint-xxl) {
+    grid-auto-rows: 340px;
+    grid-gap: 13px;
+  }
+
+  .photo {
+    @include set-theme-colors(background-color, img-placeholder);
+    overflow: hidden;
+
+    figure img {
+      width: 100%;
+    }
+  }
+
+  .landscape {
+    grid-column: span 2;
+  }
+}
+
+//  RECIPE CARD LIST
+.card-recipes-list {
+  @include reset-ul;
+  @include set-grid-for-cards;
+
+  a {
+    @include reset-a;
+    width: 100%;
+    display: inline-block;
+    border-radius: $border-radius-md;
+    @include set-theme-colors(background-color, card-bg);
+
+    &:hover  {
+      @include set-theme-colors(box-shadow, overlay,#{$hex-opacity} 0 0 0 100vw inset);
+
+      img {
+        opacity: $link-opacity;
+      }
+    }
+
+    // change look when card has no link
+    &[href=""] {
+      @include set-theme-colors(box-shadow, overlay,#{$hex-opacity} 0 0 0 100vw inset);
+      cursor: not-allowed;
+
+      img {
+        opacity: $link-opacity;
+      }
+
+      * {
+        color: #{$contrast-color}#{$hex-opacity};
+      }
+    }
+  }
+
+  figure img {
+    width: 100%;
+    border-top-left-radius: $border-radius-md;
+    border-top-right-radius: $border-radius-md;
+    @include set-theme-colors(background-color, img-placeholder);
+
+    //keeps aspect ratio of empty photo to 3/2
+    // When the browser support is better change to "aspect-ratio: 2 / 3;"
+    height: 60vw;
+
+    @media all and (min-width: $min-width-breakpoint-xs) {
+      height: 29.016vw;
+    }
+
+    @media all and (min-width: $min-width-breakpoint-md) {
+      height: 19.111vw;
+    }
+
+    @media all and (min-width: $min-width-breakpoint-lg) {
+      height: 16.780vw;
+    }
+
+    @media all and (min-width: $min-width-breakpoint-xl) {
+      height: 12.333vw;
+    }
+
+    @media all and (min-width: $min-width-breakpoint-xxl) {
+      height: 246.67px;
+    }
+  }
+
+  .card-inner-wrapper {
+    margin: 1em 5% 10% 5%;
+    @include set-subtitle-with-header(h2);
+
+    h2 {
+      margin-top: 0;
+      line-height: 1.2em;
+    }
+
+    .food-types span {
+      margin: 0.3em 0.7em 0.3em 0;
+      color: #{$contrast-color}#{$hex-opacity};
+    }
+  }
+}
+
+//  RECIPE
+.recipe {
+  width: 100%;
+  border:1px solid;
+  border-radius: $border-radius-md;
+  @include border-opacity($border-color, $border-opacity);
+  padding: 0 3% 3% 3%;
+
+  header {
+    display: grid;
+
+    @media all and (min-width: $min-width-breakpoint-md) {
+      grid-template-columns: 1.3fr 1fr;
+      grid-gap: 5vw;
+    }
+
+    @media all and (min-width: $min-width-breakpoint-xl) {
+      align-items: center;
+    }
+
+    .header-of-recipe-wrapper {
+      .heading-wrapper {
+        border-bottom: 5px solid;
+        @include border-opacity($border-color, $border-opacity);
+        @include set-subtitle-with-header(h2);
+
+        h2 {
+          @media all and (min-width: $min-width-breakpoint-xl) {
+            margin-top: 0;
+          }
+        }
+      }
+
+      .quick-info-wrapper {
+        margin-top: 1em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .cooking-time, .portions {
+          display: grid;
+          grid-template-columns: 20px 1fr;
+          column-gap: 10px;
+
+          svg {
+            grid-row: span 2;
+            margin-top: 0.3rem;
+          }
+        }
+      }
+
+      .food-types {
+        margin-top: 2em;
+
+        span {
+          color: #{$contrast-color}#{$hex-opacity};
+          margin-right: 0.7em;
+        }
+      }
+    }
+
+    figure {
+      margin-top: 5%;
+
+      img {
+        width: 100%;
+        @include set-theme-colors(background-color, img-placeholder);
+        border-radius: $border-radius-md;
+
+        //keeps aspect ratio of empty photo to 3/2
+        // When the browser support is better change to "aspect-ratio: 2 / 3;"
+        height: 56.22vw;
+
+        @media all and (min-width: $min-width-breakpoint-md) {
+          height: 23.026vw;
+        }
+
+        @media all and (min-width: $min-width-breakpoint-lg) {
+          height: 20.302vw;
+        }
+
+        @media all and (min-width: $min-width-breakpoint-xxl) {
+          height: 392.813px;
+        }
+      }
+    }
+  }
+
+  .content-wrapper {
+    @media all and (min-width: $min-width-breakpoint-md) {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      grid-gap: 3rem;
+    }
+
+    .instructions {
+      ol {
+        .subtitle {
+          margin-bottom: 0;
+        }
+
+        .subtitle + p {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+//  LIGHTBOX
+#lightbox {
+  display: none;
+}
+
+#lightbox.active {
+  display: grid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  @include set-theme-colors(background-color, lightbox-bg, #{$lightbox-hex-opacity});
+  grid-template-columns: 1fr 35vw 35vw 1fr;
+
+  @media all and (orientation: landscape) {
+    grid-template-columns: 1fr 90vw 1fr;
+  }
+
+
+  figure {
+    order: 1;
+    grid-column: span 4;
+    align-self: center;
+    height: 85vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+    @media all and (orientation: landscape) {
+      order: 2;
+      grid-column: unset;
+      margin-top: 0;
+      height: auto;
+      display: block;
+    }
+
+    img {
+      margin: 0 auto;
+      display: block;
+    }
+
+    figcaption {
+      text-align: center;
+    }
+  }
+
+  button {
+    @include reset-btn;
+    @include set-theme-colors(background-color, body-bg);
+    border-radius: $border-radius-sm;
+  }
+
+  #arrowLeftBtn {
+    order: 2;
+    grid-column: span 2;
+
+    @media all and (orientation: landscape) {
+      order: 1;
+      grid-column:  unset;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  #arrowRightBtn {
+    order: 3;
+    grid-column: span 2;
+
+    @media all and (orientation: landscape) {
+      grid-column:  unset;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  #arrowRightBtn, #arrowLeftBtn {
+    height: 2em;
+    margin: 0 20%;
+
+    @media all and (orientation: landscape) {
+      height: 30vh;
+      align-self: center;
+      margin: 0;
+    }
+
+    &.disabled * {
+      color: #{$contrast-color}#{$hex-opacity};
+    }
+  }
+
+  #closeBtn {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    padding: 0.5em 1em;
+    margin-top: 1em;
+  }
+}
+
+//  TOGGLE THEME
+.toggle-theme {
+  margin: #{$paragraph-margin};
+  display: inline-flex;
+  @include spacers-between-button-like-items(label, space-between);
+
+  input {
+    position: absolute;
+    opacity: 0;
+
+    &#theme1Toggle + label:hover {
+      background-color: get-color-from-colors(theme-1, active-item-bg);
+      border-color: get-color-from-colors(theme-1, active-item-bg);
+    }
+
+    &#theme2Toggle + label:hover {
+      background-color: get-color-from-colors(theme-2, active-item-bg);
+      border-color: get-color-from-colors(theme-2, active-item-bg);
+    }
+
+    &#theme3Toggle + label:hover {
+      background-color: get-color-from-colors(theme-3, active-item-bg);
+      border-color: get-color-from-colors(theme-3, active-item-bg);
+    }
+  }
+
+  label {
+    cursor: pointer;
+    @include padding-and-border-for-buttons;
+  }
+
+  input:checked + label {
+    @include set-theme-colors(background-color, active-item-bg);
+    @include set-theme-colors(border-color, active-item-bg);
+  }
+}
+

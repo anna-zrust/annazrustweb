@@ -1,0 +1,55 @@
+//  HERO
+header.main-header {
+  //  HERO - MAIN CATEGORIES
+  .hero-main-category {
+    body.travel & {
+      @include set-image-set-for-hero(hero/travel);
+    }
+
+    body.home & {
+      @include set-image-set-for-hero(hero/home);
+    }
+
+    body.cooking & {
+      @include set-image-set-for-hero(hero/vegan-raw-chocolate-balls);
+    }
+  }
+
+  //  HERO - SUB-CATEGORIES
+  .hero-subcategory {
+    body.design-system & {
+      @include set-image-set-for-hero(hero/forest);
+    }
+
+    body.other-projects & {
+      @include set-image-set-for-hero(hero/other-projects);
+    }
+
+    body.iceland & {
+      @include set-image-set-for-hero(hero/iceland);
+    }
+
+    body.reykjavik & {
+      @include set-image-set-for-hero(hero/reykjavik);
+    }
+
+    body.vegan-raw-chocolate-sweets & {
+      @include set-image-set-for-hero(hero/vegan-raw-chocolate-balls);
+    }
+  }
+}
+
+//  CATEGORY CARDS
+.card-categories-list .category-card {
+  body.design-system & {
+    @include set-img-for-category-card(1, travel-card/card);
+  }
+
+  body.travel & {
+    @include set-img-for-category-card(1, travel-card/iceland);
+  }
+
+  body.iceland & {
+    @include set-img-for-category-card(1, travel-card/reykjavik);
+  }
+}
