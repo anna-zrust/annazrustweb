@@ -1,6 +1,11 @@
 import './sass/main.scss';
-import '@fortawesome/fontawesome-free/js/all.js'; //todo later add tree-shaking
+import { dom, library } from '@fortawesome/fontawesome-svg-core'
+import { faHome, faPlane, faPizzaSlice, faArrowRight, faUtensils, faTimes, faChevronRight, faChevronLeft, faClock } from '@fortawesome/free-solid-svg-icons';
+import { faTwitter, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import './lightbox'
+
+library.add(faHome, faPlane, faPizzaSlice, faArrowRight, faUtensils, faTwitter, faInstagram, faLinkedinIn, faTimes, faChevronRight, faChevronLeft, faClock );
+dom.i2svg();
 
 
 // When the user scrolls the page, execute this page
@@ -25,19 +30,21 @@ const theme3Element = document.getElementById("theme3Toggle");
 const toggleList = [theme1Element, theme2Element, theme3Element];
 
 toggleList.forEach(toggle => {
-    toggle.addEventListener('click', () => {
-        switch (toggle.id) {
-            case "theme1Toggle":
-                setThemeClassOnBody("theme-1");
-                break;
-            case "theme2Toggle":
-                setThemeClassOnBody("theme-2");
-                break;
-            case "theme3Toggle":
-                setThemeClassOnBody("theme-3");
-                break;
-        }
-    });
+    if(typeof toggle !== "undefined" && toggle !== null) {
+        toggle.addEventListener('click', () => {
+            switch (toggle.id) {
+                case "theme1Toggle":
+                    setThemeClassOnBody("theme-1");
+                    break;
+                case "theme2Toggle":
+                    setThemeClassOnBody("theme-2");
+                    break;
+                case "theme3Toggle":
+                    setThemeClassOnBody("theme-3");
+                    break;
+            }
+        });
+    }
 });
 
 function setThemeClassOnBody(themeClass) {
