@@ -6,7 +6,7 @@ class Header extends React.Component {
     render() {
         return (
             <header className='main-header'>
-                <Hero type='main-category'  headerText='Hello.' subtitleText=''/>
+                <Hero type='main-category'  headerText={this.props.pageName} subtitleText=''/>
                 <MainNav />
             </header>
         )

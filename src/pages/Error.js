@@ -2,6 +2,10 @@ import React from 'react';
 import ArticleSection from "../components/ArticleSection";
 
 class Error extends React.Component {
+    componentDidMount() {
+        this.props.onPageNameChange('Error')
+    }
+
     render() {
         return (
             <main>

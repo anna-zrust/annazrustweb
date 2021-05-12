@@ -5,6 +5,7 @@ class Cooking extends React.Component {
     componentDidMount() {
         this.props.onThemeChange(3)
         this.props.onPageChange('cooking')
+        this.props.onPageNameChange('Cooking')
     }
 
     render() {

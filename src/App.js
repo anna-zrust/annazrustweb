@@ -14,11 +14,14 @@ class App extends React.Component {
         super(props);
         this.handleThemeChange = this.handleThemeChange.bind(this);
         this.handlePageChange = this.handlePageChange.bind(this);
+        this.handlePageNameChange = this.handlePageNameChange.bind(this);
         this.state = {
-            theme: 0,
-            page: 'test'
+            theme: 1,
+            page: 'home',
+            pageName: 'Hello.'
         };
     }
+
     handleThemeChange(theme) {
         this.setState({theme})
     }
@@ -27,10 +30,14 @@ class App extends React.Component {
         this.setState({page})
     }
 
+    handlePageNameChange(pageName) {
+        this.setState({pageName})
+    }
+
     render() {
         return (
             <div className={'theme-' + this.state.theme + ' ' + this.state.page}>
-                <Header />
+                <Header pageName={this.state.pageName} />
                 <Switch>
                     <Route
                         path="/"
@@ -39,6 +46,7 @@ class App extends React.Component {
                             <Home {...props}
                                   onThemeChange={this.handleThemeChange}
                                   onPageChange={this.handlePageChange}
+                                  onPageNameChange={this.handlePageNameChange}
                             />
                         )}
                     />
@@ -49,6 +57,7 @@ class App extends React.Component {
                             <Travel {...props}
                                   onThemeChange={this.handleThemeChange}
                                   onPageChange={this.handlePageChange}
+                                  onPageNameChange={this.handlePageNameChange}
                             />
                         )}
                     />
@@ -59,6 +68,7 @@ class App extends React.Component {
                             <Cooking {...props}
                                     onThemeChange={this.handleThemeChange}
                                     onPageChange={this.handlePageChange}
+                                    onPageNameChange={this.handlePageNameChange}
                             />
                         )}
                     />
