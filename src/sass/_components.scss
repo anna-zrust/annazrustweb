@@ -125,7 +125,7 @@ header.main-header {
     height: 100%;
   }
 
-  .hero-main-category, .hero-subcategory {
+  .hero-main-category, .hero-sub-category {
     @include set-theme-colors(background-color, img-placeholder);
     background-position: center;
     background-repeat: no-repeat;
@@ -162,7 +162,7 @@ header.main-header {
   }
 
   //  HERO HEADERS - SUB CATEGORY
-  .hero-subcategory {
+  .hero-sub-category {
     @include set-subtitle-with-header(h1);
     @include set-theme-colors(box-shadow, overlay,#{$hex-opacity} 0 0 0 100vw inset);
 

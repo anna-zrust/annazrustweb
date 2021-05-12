@@ -8,7 +8,24 @@ library.add(faHome, faPlane, faPizzaSlice, faArrowRight, faUtensils, faTwitter, 
 dom.i2svg();
 
 
-// When the user scrolls the page, execute this page
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+
+import App from './App';
+
+
+ReactDOM.render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
+    document.getElementById('root')
+);
+
+module.hot.accept();
+
+
+/*// When the user scrolls the page, execute this page
 window.onscroll = () => {mainNavigationSticky()};
 
 // Get the header
@@ -60,7 +77,7 @@ function removePreviousThemeClassOnBody() {
     } else if (bodyElement.classList.contains("theme-3")) {
         bodyElement.classList.remove("theme-3");
     }
-}
+}*/
 
 
 

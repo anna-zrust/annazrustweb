@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const CompressionPlugin = require("compression-webpack-plugin");
 const zlib = require("zlib");
 
@@ -13,7 +14,7 @@ module.exports = {
                 use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
-                test: /\.(js)$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: ['babel-loader']
             },
@@ -36,17 +37,21 @@ module.exports = {
             threshold: 10240,
             minRatio: 0.8,
             deleteOriginalAssets: false,
-        })
+        }),
+       new webpack.HotModuleReplacementPlugin()
 
     ],
     resolve: {
-        extensions: ['*', '.js']
+        extensions: ['*', '.js', '.jsx']
     },
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: 'bundle.js',
+        publicPath: '/'
     },
     devServer: {
         contentBase: path.resolve(__dirname, './dist'),
+        historyApiFallback: true,
+        hot: true
     },
 };

@@ -6,15 +6,15 @@ html {
 body {
   margin: 0;
 
-  &.theme-1 {
+  #root > .theme-1 {
     background-color: get-color-from-colors(theme-1, body-bg);
   }
 
-  &.theme-2 {
+  #root > .theme-2 {
     background-color: get-color-from-colors(theme-2, body-bg);
   }
 
-  &.theme-3 {
+  #root > .theme-3 {
     background-color: get-color-from-colors(theme-3, body-bg);
   }
 }
@@ -126,7 +126,7 @@ header.main-header {
           border-color: get-color-from-colors(theme-3, active-item-bg);
         }
 
-        &.active a {
+        & a.active {
           @include set-theme-colors(background-color, active-item-bg);
           @include set-theme-colors(border-color, active-item-bg);
         }

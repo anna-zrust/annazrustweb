@@ -2,38 +2,38 @@
 header.main-header {
   //  HERO - MAIN CATEGORIES
   .hero-main-category {
-    body.travel & {
+    #root > .travel & {
       @include set-image-set-for-hero(hero/travel);
     }
 
-    body.home & {
+    #root > .home & {
       @include set-image-set-for-hero(hero/home);
     }
 
-    body.cooking & {
+    #root > .cooking & {
       @include set-image-set-for-hero(hero/vegan-raw-chocolate-balls);
     }
   }
 
   //  HERO - SUB-CATEGORIES
-  .hero-subcategory {
-    body.design-system & {
+  .hero-sub-category {
+    #root > .design-system & {
       @include set-image-set-for-hero(hero/forest);
     }
 
-    body.other-projects & {
+    #root > .other-projects & {
       @include set-image-set-for-hero(hero/other-projects);
     }
 
-    body.iceland & {
+    #root > .iceland & {
       @include set-image-set-for-hero(hero/iceland);
     }
 
-    body.reykjavik & {
+    #root > .reykjavik & {
       @include set-image-set-for-hero(hero/reykjavik);
     }
 
-    body.vegan-raw-chocolate-sweets & {
+    #root > .vegan-raw-chocolate-sweets & {
       @include set-image-set-for-hero(hero/vegan-raw-chocolate-balls);
     }
   }
@@ -41,15 +41,15 @@ header.main-header {
 
 //  CATEGORY CARDS
 .card-categories-list .category-card {
-  body.design-system & {
+  #root > .design-system & {
     @include set-img-for-category-card(1, travel-card/card);
   }
 
-  body.travel & {
+  #root > .travel & {
     @include set-img-for-category-card(1, travel-card/iceland);
   }
 
-  body.iceland & {
+  #root > .iceland & {
     @include set-img-for-category-card(1, travel-card/reykjavik);
   }
 }

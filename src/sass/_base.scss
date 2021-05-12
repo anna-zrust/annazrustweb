@@ -198,7 +198,7 @@ $max-width-breakpoint-xs: $min-width-breakpoint-xs - 0.02px;
 
 @mixin set-theme-colors($css-property, $color-key, $rest-values...) {
   @each $theme, $sub-map in $colors {
-    body.#{$theme} & {
+    #root > .#{$theme} & {
       #{$css-property}: map-get($sub-map, $color-key)#{$rest-values};
     }
   }
