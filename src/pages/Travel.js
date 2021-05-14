@@ -7,6 +7,7 @@ class Travel extends React.Component {
         this.props.onThemeChange(2)
         this.props.onPageChange('travel')
         this.props.onPageNameChange('Travel')
+        this.props.onPageSubtitleChange('')
     }
 
     render() {

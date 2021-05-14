@@ -6,8 +6,8 @@ class Hero extends React.Component {
         return (
             <div className={heroClassName}>
                 <div className="hero-inner-wrapper">
-                    <h1>{this.props.headerText}</h1>
-                    {this.props.subtitleText ? <p className='subtitle'>{this.props.subtitleText}</p> : ''}
+                    <h1>{this.props.pageName}</h1>
+                    {this.props.pageSubtitle ? <p className='subtitle'>{this.props.pageSubtitle}</p> : ''}
                 </div>
             </div>
         )

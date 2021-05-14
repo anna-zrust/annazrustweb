@@ -4,9 +4,11 @@ import MainNav from "./MainNav";
 
 class Header extends React.Component {
     render() {
+        let categoryType = this.props.pageSubtitle ? 'sub-category' : 'main-category'
+
         return (
             <header className='main-header'>
-                <Hero type='main-category'  headerText={this.props.pageName} subtitleText=''/>
+                <Hero type={categoryType}  pageName={this.props.pageName} pageSubtitle={this.props.pageSubtitle}/>
                 <MainNav />
             </header>
         )

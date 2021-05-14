@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Error from "./pages/Error"
+import PageNotFound from "./pages/PageNotFound"
 
 import Home from "./pages/Home";
 import Travel from "./pages/Travel"
@@ -15,10 +15,12 @@ class App extends React.Component {
         this.handleThemeChange = this.handleThemeChange.bind(this);
         this.handlePageChange = this.handlePageChange.bind(this);
         this.handlePageNameChange = this.handlePageNameChange.bind(this);
+        this.handlePageSubtitleChange = this.handlePageSubtitleChange.bind(this);
         this.state = {
             theme: 1,
             page: 'home',
-            pageName: 'Hello.'
+            pageName: 'Hello.',
+            pageSubtitle: ''
         };
     }
 
@@ -34,10 +36,14 @@ class App extends React.Component {
         this.setState({pageName})
     }
 
+    handlePageSubtitleChange(pageSubtitle) {
+        this.setState({pageSubtitle})
+    }
+
     render() {
         return (
             <div className={'theme-' + this.state.theme + ' ' + this.state.page}>
-                <Header pageName={this.state.pageName} />
+                <Header pageName={this.state.pageName} pageSubtitle={this.state.pageSubtitle}/>
                 <Switch>
                     <Route
                         path="/"
@@ -47,6 +53,7 @@ class App extends React.Component {
                                   onThemeChange={this.handleThemeChange}
                                   onPageChange={this.handlePageChange}
                                   onPageNameChange={this.handlePageNameChange}
+                                  onPageSubtitleChange={this.handlePageSubtitleChange}
                             />
                         )}
                     />
@@ -58,6 +65,7 @@ class App extends React.Component {
                                   onThemeChange={this.handleThemeChange}
                                   onPageChange={this.handlePageChange}
                                   onPageNameChange={this.handlePageNameChange}
+                                  onPageSubtitleChange={this.handlePageSubtitleChange}
                             />
                         )}
                     />
@@ -69,10 +77,19 @@ class App extends React.Component {
                                     onThemeChange={this.handleThemeChange}
                                     onPageChange={this.handlePageChange}
                                     onPageNameChange={this.handlePageNameChange}
+                                    onPageSubtitleChange={this.handlePageSubtitleChange}
                             />
                         )}
                     />
-                    <Route component={Error} />
+                    <Route
+                           render={props => (
+                               <PageNotFound {...props}
+                                        onPageChange={this.handlePageChange}
+                                        onPageNameChange={this.handlePageNameChange}
+                                        onPageSubtitleChange={this.handlePageSubtitleChange}
+                               />
+                           )}
+                    />
                 </Switch>
                 <Footer />
             </div>

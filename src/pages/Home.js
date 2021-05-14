@@ -10,6 +10,7 @@ class Home extends React.Component {
         this.props.onThemeChange(1)
         this.props.onPageChange('home')
         this.props.onPageNameChange('Hello.')
+        this.props.onPageSubtitleChange('')
     }
 
     render() {
