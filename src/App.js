@@ -67,6 +67,7 @@ class App extends React.Component {
                                   onPageChange={this.handlePageChange}
                                   onPageNameChange={this.handlePageNameChange}
                                   onPageSubtitleChange={this.handlePageSubtitleChange}
+                                  currentTheme={this.state.theme}
                             />
                         )}
                     />

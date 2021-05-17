@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ArticleSection from "../components/ArticleSection";
+import ThemeToggle from "../components/ThemeToggle";
 
 class Home extends React.Component {
     componentDidMount() {
@@ -14,7 +15,8 @@ class Home extends React.Component {
         return (
             <main>
                 <ArticleSection className='design-system'>
-                    <p>Hello there</p>
+                    <h2>Change theme</h2>
+                    <ThemeToggle onThemeChange={this.props.onThemeChange} currentTheme={this.props.currentTheme}/>
                 </ArticleSection>
             </main>
         )
