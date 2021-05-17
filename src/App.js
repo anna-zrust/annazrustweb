@@ -8,6 +8,7 @@ import PageNotFound from "./pages/PageNotFound"
 import Home from "./pages/Home";
 import Travel from "./pages/Travel"
 import Cooking from "./pages/Cooking";
+import DesignSystem from "./pages/DesignSystem";
 
 class App extends React.Component {
     constructor(props) {
@@ -46,10 +47,22 @@ class App extends React.Component {
                 <Header pageName={this.state.pageName} pageSubtitle={this.state.pageSubtitle}/>
                 <Switch>
                     <Route
-                        path="/"
+                        path={["/", "/home"]}
                         exact
                         render={props => (
                             <Home {...props}
+                                  onThemeChange={this.handleThemeChange}
+                                  onPageChange={this.handlePageChange}
+                                  onPageNameChange={this.handlePageNameChange}
+                                  onPageSubtitleChange={this.handlePageSubtitleChange}
+                            />
+                        )}
+                    />
+                    <Route
+                        path="/home/design-system"
+                        exact
+                        render={props => (
+                            <DesignSystem {...props}
                                   onThemeChange={this.handleThemeChange}
                                   onPageChange={this.handlePageChange}
                                   onPageNameChange={this.handlePageNameChange}

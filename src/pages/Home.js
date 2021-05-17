@@ -41,8 +41,8 @@ class Home extends React.Component {
                         Do you want to see Design system for this website or my other projects? Follow links bellow.
                     </p>
                     <div className="buttons-wrapper">
-                        <Button innerText='Design System' link='/design-system' withIcon={true} />
-                        <Button innerText='Other projects' link='/other-projects' withIcon={true}/>
+                        <Button innerText='Design System' link='/home/design-system' withIcon={true} />
+                        <Button innerText='Other projects' link='/home/other-projects' withIcon={true}/>
                     </div>
                     <h3>Licenses</h3>
                     <CreativeCommonLicence />
