@@ -2,6 +2,7 @@ import React from 'react';
 
 import ArticleSection from "../components/ArticleSection";
 import ThemeToggle from "../components/ThemeToggle";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 class Home extends React.Component {
     componentDidMount() {
@@ -14,6 +15,7 @@ class Home extends React.Component {
     render() {
         return (
             <main>
+                <Breadcrumbs />
                 <ArticleSection className='design-system'>
                     <h2>Change theme</h2>
                     <ThemeToggle onThemeChange={this.props.onThemeChange} currentTheme={this.props.currentTheme}/>
