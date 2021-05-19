@@ -10,7 +10,7 @@ const Breadcrumbs = withBreadcrumbs()(({ breadcrumbs }) => (
                 <EmptyWrapper>
                     {match.url === '/home' ? '' :
                         <li key={match.url}>
-                            <NavLink to={match.url}>{breadcrumb}</NavLink>
+                            <NavLink to={match.url} exact key={match.url}>{breadcrumb.props.children.replaceAll("-", " ")}</NavLink>
                         </li>
                     }
                 </EmptyWrapper>
