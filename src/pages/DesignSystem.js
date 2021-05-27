@@ -52,7 +52,7 @@ class Home extends React.Component {
                         lobortis. Nunc sagittis mi non risus tincidunt, vitae condimentum libero suscipit. Nunc sed metus vel odio
                         porta ultricies eget vitae nunc. Maecenas scelerisque risus quis est luctus vulputate sed et massa.
                     </p>
-                    <ImageForGeneralText />
+                    <ImageForGeneralText alt='image alt' caption='image caption' imageName='pancake' />
                     <p>Mauris quis justo placerat, malesuada lectus quis, lobortis diam. Praesent diam elit, tincidunt ac libero
                         vitae, malesuada hendrerit neque. Ut et mi eu purus rhoncus bibendum. Ut tempor dignissim purus consectetur
                         laoreet. Sed quis maximus lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer nec

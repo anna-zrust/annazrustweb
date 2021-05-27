@@ -12,6 +12,7 @@ class FigureImg extends React.Component {
                         sizes={this.props.sizes}
                     />
                 </picture>
+                {this.props.caption ?  <figcaption>{this.props.caption}</figcaption> : ''}
             </figure>
         )
     }

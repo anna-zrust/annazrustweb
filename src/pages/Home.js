@@ -19,8 +19,11 @@ class Home extends React.Component {
                 <ArticleSection className='about-me'>
                     <FigureImg
                         className='avatar'
-                        src='img/anna-zrust-300.jpg'
+                        src='img/others/anna-zrust-300.jpg'
                         alt='Anna Marie Zrust smiling'
+                        sizes='(min-width: 1200px) 300px, (min-width: 600px) 30vw, 50vw'
+                        srcSet='img/others/anna-zrust-200.webp 200w, img/others/anna-zrust-300.webp 300w,
+                                img/others/anna-zrust-450.webp 450w, img/others/anna-zrust-600.webp 600w'
                     />
 
                     <h2>Who am I</h2>
