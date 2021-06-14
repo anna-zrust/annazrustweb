@@ -7,9 +7,9 @@ const Breadcrumbs = withBreadcrumbs()(({ breadcrumbs }) => (
     <nav className='breadcrumb'>
         <ol>
             {breadcrumbs.map(({ match, breadcrumb }) => (
-                <EmptyWrapper>
+                <EmptyWrapper key={match.url}>
                     {match.url === '/home' ? '' :
-                        <li key={match.url}>
+                        <li>
                             <NavLink to={match.url} exact key={match.url}>{breadcrumb.props.children.replaceAll("-", " ")}</NavLink>
                         </li>
                     }
