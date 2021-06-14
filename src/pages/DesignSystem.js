@@ -6,6 +6,7 @@ import ThemeToggle from "../components/ThemeToggle";
 import Breadcrumbs from "../components/Breadcrumbs";
 import Button from "../components/Button";
 import ImageForGeneralText from "../components/ImageForGeneralText";
+import ThematicBreak from "../components/ThematicBreak";
 
 class Home extends React.Component {
     componentDidMount() {
@@ -62,6 +63,7 @@ class Home extends React.Component {
                         euismod mi. Sed dictum orci sit amet urna aliquam, nec tempus urna molestie. Fusce sagittis nunc ut nulla
                         cursus, nec euismod dui elementum.
                     </p>
+                    <ThematicBreak />
                     <h2>Go to button</h2>
                     <Button innerText='Go to page' link='/' withIcon={true} />
                     <h3>More buttons next to each other</h3>
