@@ -6,7 +6,7 @@ if not exist ..\..\dist\img\basic-img-landscape mkdir ..\..\dist\img\basic-img-l
 if not exist ..\..\dist\img\gallery-landscape mkdir ..\..\dist\img\gallery-landscape
 if not exist ..\..\dist\img\gallery-portrait mkdir ..\..\dist\img\gallery-portrait
 if not exist ..\..\dist\img\recipe-thumbnail mkdir ..\..\dist\img\recipe-thumbnail
-if not exist ..\..\dist\img\travel-card mkdir ..\..\dist\img\travel-card
+if not exist ..\..\dist\img\category-card mkdir ..\..\dist\img\category-card
 if not exist ..\..\dist\img\others mkdir ..\..\dist\img\others
 
 
@@ -85,15 +85,15 @@ for %%f in (recipe-thumbnail\*.jpg) do (
     convert %%f -resize 1800 -quality 70 %dist_recipe_thumbnail%%%~nf-1800.webp
 )
 
-set dist_travel_card=..\..\dist\img\travel-card\
-for %%f in (travel-card\*.jpg) do (
+set dist_category_card=..\..\dist\img\category-card\
+for %%f in (category-card\*.jpg) do (
     exiftool -all= --icc_profile:all %%f
 
-    convert %%f -resize 370 -quality 70 -gravity center -crop 1:1 +repage %dist_travel_card%%%~nf-370.jpg
+    convert %%f -resize 370 -quality 70 -gravity center -crop 1:1 +repage %dist_category_card%%%~nf-370.jpg
 
-	convert %%f -resize 370 -quality 70 -gravity center -crop 1:1 +repage %dist_travel_card%%%~nf-370.webp
-    convert %%f -resize 555 -quality 70 -gravity center -crop 1:1 +repage %dist_travel_card%%%~nf-555.webp
-    convert %%f -resize 740 -quality 70 -gravity center -crop 1:1 +repage %dist_travel_card%%%~nf-740.webp
+	convert %%f -resize 370 -quality 70 -gravity center -crop 1:1 +repage %dist_category_card%%%~nf-370.webp
+    convert %%f -resize 555 -quality 70 -gravity center -crop 1:1 +repage %dist_category_card%%%~nf-555.webp
+    convert %%f -resize 740 -quality 70 -gravity center -crop 1:1 +repage %dist_category_card%%%~nf-740.webp
 )
 
 set dist_others_jpg=..\..\dist\img\others\

@@ -262,22 +262,22 @@ header.main-header {
         @include set-theme-colors(box-shadow, overlay,#{$hex-opacity} 0 0 0 100vw inset);
       }
 
-      // change look when card has no link
-      &[href=""] {
-        @include set-theme-colors(box-shadow, overlay,#{$hex-opacity} 0 0 0 100vw inset);
-        cursor: not-allowed;
-
-        h2, .subtitle {
-          color: #{$contrast-color}#{$hex-opacity};
-        }
-      }
-
       @include set-subtitle-with-header(h2);
 
       .subtitle {
         @media all and (min-width: $min-width-breakpoint-lg) {
           @include ellipsis-for-multiline-text(3);
         }
+      }
+    }
+
+    // change look when card has no link
+    &.disabled  a {
+      @include set-theme-colors(box-shadow, overlay,#{$hex-opacity} 0 0 0 100vw inset);
+      cursor: not-allowed;
+
+      h2, .subtitle {
+        color: #{$contrast-color}#{$hex-opacity};
       }
     }
   }

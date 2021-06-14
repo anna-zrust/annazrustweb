@@ -1,5 +1,5 @@
 import React from 'react';
-import ListItem from "./ListItem";
+import LinkListItem from "./LinkListItem";
 import { faLinkedinIn, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 class SocialNetworks extends React.Component {
@@ -7,19 +7,19 @@ class SocialNetworks extends React.Component {
         return (
             <address className="social-networks">
                 <ul>
-                    <ListItem
+                    <LinkListItem
                         icon={faLinkedinIn}
                         iconSize='lg'
                         isExternalLink={true}
                         link='https://www.linkedin.com/in/anna-zrust'
                     />
-                    <ListItem
+                    <LinkListItem
                         icon={faTwitter}
                         iconSize='lg'
                         isExternalLink={true}
                         link='https://twitter.com/Ponera642'
                     />
-                    <ListItem
+                    <LinkListItem
                         icon={faInstagram}
                         iconSize='lg'
                         isExternalLink={true}

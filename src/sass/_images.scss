@@ -42,14 +42,14 @@ header.main-header {
 //  CATEGORY CARDS
 .card-categories-list .category-card {
   #root > .design-system & {
-    @include set-img-for-category-card(1, travel-card/card);
+    @include set-img-for-category-card(1, category-card/card);
   }
 
   #root > .travel & {
-    @include set-img-for-category-card(1, travel-card/iceland);
+    @include set-img-for-category-card(1, category-card/iceland);
   }
 
   #root > .iceland & {
-    @include set-img-for-category-card(1, travel-card/reykjavik);
+    @include set-img-for-category-card(1, category-card/reykjavik);
   }
 }

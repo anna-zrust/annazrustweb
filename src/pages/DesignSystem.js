@@ -7,6 +7,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import Button from "../components/Button";
 import ImageForGeneralText from "../components/ImageForGeneralText";
 import ThematicBreak from "../components/ThematicBreak";
+import CategoryCardsList from "../components/CategoryCardsList";
 
 class Home extends React.Component {
     componentDidMount() {
@@ -17,6 +18,31 @@ class Home extends React.Component {
     }
 
     render() {
+
+        let CategoryCardData = [
+            {
+                header: 'Card with img',
+                subtitle: 'card subtitle - 1999',
+                link: '#',
+                id: '01Card-DesignSystem',
+                disabled: false,
+            },
+            {
+                header: 'Card without img',
+                subtitle: 'super cool and quite long subtitle',
+                link: '#',
+                id: '02Card-DesignSystem',
+                disabled: false,
+            },
+            {
+                header: 'Disabled card',
+                subtitle: 'card subtitle - 0000',
+                link: '#',
+                id: '03Card-DesignSystem',
+                disabled: true,
+            }
+        ];
+
         return (
             <main>
                 <Breadcrumbs />
@@ -71,6 +97,9 @@ class Home extends React.Component {
                         <Button innerText='Go to external link' link='https://github.com/' withIcon={true} isExternalLink={true} />
                         <Button innerText='Go to homepage without icon' link='/' />
                     </div>
+                    <h2>Category cards</h2>
+                    <p>Cards are used in "Travel" section of the website.</p>
+                    <CategoryCardsList data={CategoryCardData}/>
                 </ArticleSection>
             </main>
         )
@@ -78,4 +107,3 @@ class Home extends React.Component {
 }
 
 export default Home;
-

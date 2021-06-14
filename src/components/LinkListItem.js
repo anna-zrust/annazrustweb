@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-class ListItem extends React.Component {
+class LinkListItem extends React.Component {
     render() {
         let link
         if(this.props.isExternalLink) {
@@ -27,4 +27,4 @@ class ListItem extends React.Component {
     }
 }
 
-export default ListItem;
+export default LinkListItem;
