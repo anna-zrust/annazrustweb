@@ -327,6 +327,10 @@ header.main-header {
     border-radius: $border-radius-md;
     @include set-theme-colors(background-color, card-bg);
 
+    img {
+      display: inline-block;
+    }
+
     &:hover  {
       @include set-theme-colors(box-shadow, overlay,#{$hex-opacity} 0 0 0 100vw inset);
 
@@ -334,19 +338,19 @@ header.main-header {
         opacity: $link-opacity;
       }
     }
+  }
 
-    // change look when card has no link
-    &[href=""] {
-      @include set-theme-colors(box-shadow, overlay,#{$hex-opacity} 0 0 0 100vw inset);
-      cursor: not-allowed;
+  // change look when card has no link
+  .disabled a {
+    @include set-theme-colors(box-shadow, overlay,#{$hex-opacity} 0 0 0 100vw inset);
+    cursor: not-allowed;
 
-      img {
-        opacity: $link-opacity;
-      }
+    img {
+      opacity: $link-opacity;
+    }
 
-      * {
-        color: #{$contrast-color}#{$hex-opacity};
-      }
+    * {
+      color: #{$contrast-color}#{$hex-opacity};
     }
   }
 

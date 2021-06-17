@@ -8,6 +8,7 @@ import Button from "../components/Button";
 import ImageForGeneralText from "../components/ImageForGeneralText";
 import ThematicBreak from "../components/ThematicBreak";
 import CategoryCardsList from "../components/CategoryCardsList";
+import RecipeCardsList from "../components/RecipeCardsList";
 
 class Home extends React.Component {
     componentDidMount() {
@@ -40,6 +41,43 @@ class Home extends React.Component {
                 link: '#',
                 id: '03Card-DesignSystem',
                 disabled: true,
+            }
+        ];
+
+        let RecipeCardData = [
+            {
+                header: 'Recipe with img',
+                subtitle: 'This recipe is with image',
+                link: '#',
+                id: '01Recipe-DesignSystem',
+                disabled: false,
+                foodTypes: ['vegan', 'easy'],
+                image: {
+                    alt: 'Margarita pizza with basel',
+                    name: 'pizza',
+
+                },
+            },
+            {
+                header: 'Card with broken img',
+                subtitle: 'This recipe is without image',
+                link: '#',
+                id: '02Recipe-DesignSystem',
+                disabled: false,
+                foodTypes: ['meat-dish', 'diary-free'],
+            },
+            {
+                header: 'Disabled recipe',
+                subtitle: 'This recipe is disabled',
+                link: '#',
+                id: '03Recipe-DesignSystem',
+                disabled: true,
+                foodTypes: ['meat-dish', 'diary-free'],
+                image: {
+                    alt: 'Margarita pizza with basel',
+                    name: 'pizza',
+
+                },
             }
         ];
 
@@ -100,6 +138,9 @@ class Home extends React.Component {
                     <h2>Category cards</h2>
                     <p>Cards are used in "Travel" section of the website.</p>
                     <CategoryCardsList data={CategoryCardData}/>
+                    <h2>Recipes card</h2>
+                    <p>They are used in "Cooking" section of the website. </p>
+                    <RecipeCardsList data={RecipeCardData}/>
                 </ArticleSection>
             </main>
         )
