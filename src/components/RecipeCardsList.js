@@ -3,8 +3,8 @@ import RecipeCard from "./RecipeCard";
 
 class RecipeCardsList extends React.Component {
     render() {
-        const items = [];
-        for (const item of this.props.data) {
+        let items = [];
+        for (let item of this.props.data) {
             items.push(
                 <RecipeCard
                     key={item.id}
