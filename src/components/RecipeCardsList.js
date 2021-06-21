@@ -16,9 +16,6 @@ class RecipeCardsList extends React.Component {
                     image={item.image}
                 />
             )
-
-            console.log('nahore')
-            console.log(item.image)
         }
 
         return (
