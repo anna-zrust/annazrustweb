@@ -20,7 +20,7 @@ class Home extends React.Component {
 
     render() {
 
-        let CategoryCardData = [
+        let categoryCardData = [
             {
                 header: 'Card with img',
                 subtitle: 'card subtitle - 1999',
@@ -44,7 +44,7 @@ class Home extends React.Component {
             }
         ];
 
-        let RecipeCardData = [
+        let recipeCardData = [
             {
                 header: 'Recipe with img',
                 subtitle: 'This recipe is with image',
@@ -137,10 +137,10 @@ class Home extends React.Component {
                     </div>
                     <h2>Category cards</h2>
                     <p>Cards are used in "Travel" section of the website.</p>
-                    <CategoryCardsList data={CategoryCardData}/>
+                    <CategoryCardsList data={categoryCardData}/>
                     <h2>Recipes card</h2>
                     <p>They are used in "Cooking" section of the website. </p>
-                    <RecipeCardsList data={RecipeCardData}/>
+                    <RecipeCardsList data={recipeCardData}/>
                 </ArticleSection>
             </main>
         )
