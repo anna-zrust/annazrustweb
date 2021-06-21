@@ -1,18 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FigureImg from "./FigureImg";
+import FoodTypes from "./FoodTypes";
 
 class RecipeCard extends React.Component {
     render() {
         let categoryCardClassName = 'recipe-card';
         this.props.disabled ? categoryCardClassName = categoryCardClassName + ' disabled' : categoryCardClassName;
-
-        let foodTypes = [];
-        for (const item of this.props.foodTypes) {
-            foodTypes.push(
-                <span key={item + this.props.link + this.props.header} >{'#'+ item}</span>
-            )
-        }
 
         let image;
         const imageSizes = [370, 555, 740, 900, 1400, 1800]
@@ -40,7 +34,9 @@ class RecipeCard extends React.Component {
                     <div className="card-inner-wrapper">
                         <h2>{this.props.header}</h2>
                         <p className="subtitle">{this.props.subtitle}</p>
-                        <p className="food-types">{foodTypes}</p>
+                        <p className="food-types">
+                            <FoodTypes foodTypes={this.props.foodTypes} dataForKeyOne={this.props.link} dataForKeyTwo={this.props.header}/>
+                        </p>
                     </div>
                 </Link>
             </li>
