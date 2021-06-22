@@ -9,6 +9,7 @@ import ImageForGeneralText from "../components/ImageForGeneralText";
 import ThematicBreak from "../components/ThematicBreak";
 import CategoryCardsList from "../components/CategoryCardsList";
 import RecipeCardsList from "../components/RecipeCardsList";
+import Recipe from "../components/Recipe";
 
 class Home extends React.Component {
     componentDidMount() {
@@ -141,6 +142,25 @@ class Home extends React.Component {
                     <h2>Recipes card</h2>
                     <p>They are used in "Cooking" section of the website. </p>
                     <RecipeCardsList data={recipeCardData}/>
+                    <h2>Recipe template</h2>
+                    <p>This template is being used in "Cooking" section of the website.</p>
+                    <Recipe
+                        name='Baked vegan potatoes'
+                        subtitle='Delicious vegan, but creamy potatoes!'
+                        prepTime='15 mins'
+                        totalTime='50 mins'
+                        portions='2 - 3 portions'
+                        foodTypes={['vegan', 'easy']}
+                        image={{alt: 'Margarita pizza with basel', name: 'pizza'}}
+                        ingredients={[
+                            {name: 'Butter', list: ['500g flour', 'raw spinach / arugula', '4 tbs corn starch'] },
+                            {name: 'Filling', list:['tofu']}
+                        ]}
+                        instructions={[
+                            {title: 'Mix dry ingredience for butter', guidance: 'In big bowl mix 1 tsp of onion powder, 1 tsp of garlic powder, 500g white flour.'},
+                            {title: 'Lorem ipsum dolor sit amet', guidance: 'Donec vel erat non magna dignissim venenatis eu at tellus. Nunc convallis lacus ut odio mollis imperdiet. Maecenas malesuada dolor eu nulla pretium luctus'}
+                        ]}
+                    />
                 </ArticleSection>
             </main>
         )
