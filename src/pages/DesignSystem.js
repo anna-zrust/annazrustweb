@@ -10,6 +10,7 @@ import ThematicBreak from "../components/ThematicBreak";
 import CategoryCardsList from "../components/CategoryCardsList";
 import RecipeCardsList from "../components/RecipeCardsList";
 import Recipe from "../components/Recipe";
+import Gallery from "../components/Gallery";
 
 class Home extends React.Component {
     componentDidMount() {
@@ -80,6 +81,33 @@ class Home extends React.Component {
 
                 },
             }
+        ];
+
+        let galleryData = [
+            {
+                name: 'landscape',
+                alt: 'Blue and yellow Macaw parrot arguing',
+                type: 'landscape',
+                id: '01-DesignSystem'
+            },
+            {
+                name: 'portrait',
+                alt: 'Two brown Icelandic horses looking into camera',
+                type: 'portrait',
+                id: '02-DesignSystem'
+            },
+            {
+                name: 'broken image',
+                alt: 'Example of broken image or loading image',
+                type: 'portrait',
+                id: '03-DesignSystem'
+            },
+            {
+                name: 'broken image',
+                alt: 'Example of broken image or loading image',
+                type: 'landscape',
+                id: '04-DesignSystem'
+            },
         ];
 
         return (
@@ -161,6 +189,9 @@ class Home extends React.Component {
                             {title: 'Lorem ipsum dolor sit amet', guidance: 'Donec vel erat non magna dignissim venenatis eu at tellus. Nunc convallis lacus ut odio mollis imperdiet. Maecenas malesuada dolor eu nulla pretium luctus'}
                         ]}
                     />
+                    <h2>Photo gallery</h2>
+                    <p>Gallery is used in "Travel" section of the website. </p>
+                    <Gallery data={galleryData}/>
                 </ArticleSection>
             </main>
         )
